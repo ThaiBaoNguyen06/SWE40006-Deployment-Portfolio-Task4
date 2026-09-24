@@ -1,0 +1,12 @@
+{
+    "name": "swe40006-task4.3-web-app",
+    "version": "1.0.0",
+    "description": "SWE40006 Task 4.3 Docker web application",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "dependencies": {
+        "express": "^5.1.0"
+    }
+}

@@ -1,0 +1,27 @@
+services:
+
+  flask-app:
+    build:
+      context: ./task4.2-python-app
+    container_name: swe40006-compose-flask
+    ports:
+      - "8083:5000"
+    networks:
+      - swe40006-compose-network
+
+  node-app:
+    build:
+      context: ./task4.3-web-app
+    container_name: swe40006-compose-node
+    ports:
+      - "8084:3000"
+    environment:
+      - APP_ENV=Docker Compose
+    networks:
+      - swe40006-compose-network
+    depends_on:
+      - flask-app
+
+networks:
+  swe40006-compose-network:
+    driver: bridge
